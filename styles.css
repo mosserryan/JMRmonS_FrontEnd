@@ -1,0 +1,268 @@
+:root {
+  font-size: 24px;
+  font-family: "Open Sans";
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+
+.status {
+  color: rgb(255, 255, 255);
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 0.125rem 1rem;
+  border-radius: 100px;
+  width: 100px !important;
+}
+
+.status.javascript {
+  background: rgb(255, 149, 0);
+}
+.status.CSharp {
+  background: rgb(0, 166, 255);
+  padding: 0.125rem 3rem;
+}
+.status.python {
+  background: purple;
+  padding: 0.125rem 2rem;
+}
+
+html {
+  box-sizing: border-box;
+}
+section {
+  /* display: flex;
+  flex-direction: row; */
+
+  text-align: center;
+  padding: 0 150px 0 150px !important;
+}
+
+body {
+  /* background-image: url(https://a-static.besthdwallpaper.com/numbers-and-creatures-wallpaper-1280x768-21_13.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; */
+  background-attachment: fixed;
+  height: 100%;
+}
+
+.card_count_id {
+  color: #a2a2a2;
+  position: absolute;
+}
+
+#cards_container {
+  padding-top: 20px;
+  background-color: #f7f5f5;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 20%;
+  margin: 1rem;
+  background-color: #f3f3f3;
+  border: none;
+}
+
+.card-text.top {
+  padding-top: 25px;
+  padding-bottom: 10px;
+}
+
+.card_section {
+  /* margin-left: 25%; */
+}
+
+.card-img-top {
+  height: 70%;
+  padding: 40px;
+  background-color: #ffffff;
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+  *::before, /* All ::before pseudo-elements */
+  *::after {
+  /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default
+       but can be over-ridden as needed */
+  box-sizing: inherit;
+}
+
+/* resets font size to be 62.5% of the user preference - 
+       in most browser configurations this will be 10px */
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #dfdfdf;
+  /* Use a system font, if none are available use an available sans-sarif font */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin: 0;
+}
+
+nav {
+  background-color: white;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 3.6rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+p,
+label,
+li,
+button,
+input {
+  font-size: 1.8rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+section {
+  padding: 50px;
+}
+
+li.nav_list_item span {
+  color: #cccccc;
+}
+
+pre {
+  font-size: 1.4rem;
+}
+
+nav > span {
+  margin: 1rem 3rem;
+  text-decoration: none;
+  font-size: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  height: 10rem;
+  list-style: none;
+  padding: 0;
+  z-index: 10;
+  background-color: #ffffff;
+  width: 100%;
+  align-items: center;
+  background-color: #303030;
+}
+
+.top_nav {
+  margin: 0;
+  align-items: center;
+  display: flex;
+  width: 60%;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  background-color: #ffffff;
+  background: radial-gradient(ellipse at center, #393939 0%, #303030 90%);
+}
+
+.nav_list_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  filter: grayscale(100%); /* Force icons to be gray until hovered over */
+  transition: 600ms;
+}
+
+.nav_list_item:hover {
+  filter: grayscale(0%) opacity(1);
+}
+
+.nav_list_item:hover i.fa-solid {
+  color: #ffffff;
+}
+.nav_list_item:hover span {
+  color: #ffffff;
+}
+
+.nav_list_item span {
+  text-decoration: none !important;
+}
+
+i.fa-solid {
+  color: #a2a2a2;
+  font-size: x-large;
+}
+
+li.nav_list_item:hover {
+  background-color: rgb(93, 93, 93) !important;
+}
+
+.profile_pic {
+  border-radius: 50%;
+  height: 50%;
+  margin-right: 2%;
+}
+
+.fa-solid.fa-v {
+}
+
+.navbar_title {
+  margin-right: 15%;
+  margin-left: -15%;
+  color: rgb(211, 211, 211);
+
+  /* background: radial-gradient(#5c5c5c 0%, #303030 100%); */
+}
+
+.navbar_title:hover {
+  color: rgb(255, 255, 255);
+  /* background: radial-gradient(ellipse at center, #5c5c5c 80%, #868585 80%); */
+}
+
+.btn {
+  margin: 1.6rem 0;
+}
+
+.link {
+  padding: 1rem 0;
+  font-size: 1.8rem;
+  display: inline-block;
+}
+
+.profile-avatar {
+  margin-top: 50px;
+}
