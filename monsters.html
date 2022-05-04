@@ -15,9 +15,9 @@
       src="https://kit.fontawesome.com/789fa0b966.js"
       crossorigin="anonymous"
     ></script>
-    <title>JMRmonS</title>
+    <title>CODERMONS</title>
   </head>
-  <body>
+  <body onload="getMonsterData()">
     <nav>
       <h1 class="navbar_title fa-solid fa-terminal" onclick='changeURL("home")'>
         CODERMONS
@@ -25,14 +25,14 @@
       <ul class="top_nav">
         <li class="nav_list_item">
           <i class="fa-solid fa-plus"></i
-          ><span href="/Monster">Create New</span>
+          ><span href="/monsters.html">Create New</span>
         </li>
-        <li class="nav_list_item" onclick='changeURL("monsters")'>
+        <li class="nav_list_item active" onclick='changeURL("monsters")'>
           <i class="fa-solid fa-spaghetti-monster-flying"></i
-          ><span>Monsters</span>
+          ><span href="/Monster">Monsters</span>
         </li>
 
-        <li class="nav_list_item" onclick='changeURL("friends")'>
+        <li class="nav_list_item">
           <i class="fa-solid fa-user-group"></i
           ><span href="/Monster">Friends</span>
         </li>
@@ -55,21 +55,9 @@
         alt="profile picture"
       />
     </nav>
-    <h2>Add a Monster!</h2>
-    <form
-      action="https://monster-collector.herokuapp.com/monster/"
-      method="POST"
-    >
-      <label>
-        Name:
-        <input type="text" name="name" autocomplete="off" />
-      </label>
-      <label>
-        isScary?
-        <input type="checkbox" name="isScary" />
-      </label>
-      <button type="submit">Add Monster</button>
-    </form>
+    <section class="card_section top">
+      <div id="cards_container"></div>
+    </section>
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="routes.js"></script>
   </body>
