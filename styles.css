@@ -308,4 +308,26 @@ i.fa-solid {
   margin-top: 50px;
 }
 
-/* Start Here */
+/* Sachin Start Here */
+.index-background-image {
+  background-image: url("https://images.unsplash.com/photo-1574619151033-a9e1f81cae52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80");
+  height: 100vh;
+  background-position: center;
+  background-image: cover;
+}
+
+.index-container {
+  text-align: center;
+  padding: 30px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.logo-image {
+  height: 100px;
+}
