@@ -7,6 +7,14 @@
   color: black;
 }
 
+.modal-dialog {
+  width: 18%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+}
+
 .status {
   color: rgb(255, 255, 255);
   font-size: 1.3em;
@@ -60,6 +68,31 @@ body {
   position: absolute;
 }
 
+.hidden {
+  display: none;
+}
+
+.form-control {
+  font-size: 1.5rem;
+}
+
+.modal-footer .btn {
+  font-size: 1.5rem !important;
+}
+
+/* #info_buttons {
+  display: flex;
+  flex-direction: row;
+  align-content: s;
+}
+
+#input_buttons {
+} */
+
+#input_forms {
+  margin-top: 30px;
+}
+
 #cards_container {
   padding-top: 20px;
   background-color: #e4e4e4b0;
@@ -74,6 +107,19 @@ body {
   width: 28%;
   padding: 10px;
   pointer-events: none;
+}
+.modal_card_div {
+  padding: 0 10px 0 10px;
+  pointer-events: none;
+}
+
+.model-content {
+  border-radius: 15px !important;
+}
+
+#modal_desc {
+  padding-top: 1.5rem;
+  padding-bottom: 0;
 }
 
 .card {
