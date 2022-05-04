@@ -23,30 +23,27 @@
         CODERMONS
       </h1>
       <ul class="top_nav">
-        <li class="nav_list_item">
-          <i class="fa-solid fa-plus"></i
-          ><span href="/Monster">Create New</span>
+        <li class="nav_list_item" onclick='changeURL("create")'>
+          <i class="fa-solid fa-plus"></i><span>Create New</span>
         </li>
         <li class="nav_list_item" onclick='changeURL("monsters")'>
           <i class="fa-solid fa-spaghetti-monster-flying"></i
           ><span>Monsters</span>
         </li>
 
-        <li class="nav_list_item">
-          <i class="fa-solid fa-user-group"></i
-          ><span href="/Monster">Friends</span>
+        <li class="nav_list_item" onclick='changeURL("friends")'>
+          <i class="fa-solid fa-user-group"></i><span>Friends</span>
         </li>
 
-        <li class="nav_list_item">
-          <i class="fa-solid fa-comments"></i><span href="/Monster">Chat</span>
+        <li class="nav_list_item active" onclick='changeURL("chat")'>
+          <i class="fa-solid fa-comments"></i><span>Chat</span>
         </li>
-        <li class="nav_list_item">
-          <i class="fa-solid fa-gamepad icon"></i
-          ><span href="/Monster">Battle</span>
+        <li class="nav_list_item" onclick='changeURL("battle")'>
+          <i class="fa-solid fa-gamepad icon"></i><span>Battle</span>
         </li>
-        <li class="nav_list_item">
+        <li class="nav_list_item" onclick='changeURL("signout")'>
           <i class="fa-solid fa-arrow-right-from-bracket"></i
-          ><span href="/auth/logout">Sign out</span>
+          ><span>Sign out</span>
         </li>
       </ul>
       <img

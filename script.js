@@ -81,15 +81,15 @@ async function getMonsterData() {
   return data;
 }
 
-function createMonster() {
-  const inputValues = getFormInputValues();
-  createRoute(`https://monster-collector.herokuapp.com/monster/${userId}`);
-}
+// function createMonster() {
+//   const inputValues = getFormInputValues();
+//   createRoute(`https://monster-collector.herokuapp.com/monster/${userId}`);
+// }
 
-function getFormInputValues() {
-  return {
-    name: document.getElementById("destination").value,
-    codeType: document.getElementById("codeType").value,
-    description: document.getElementById("description").value,
-  };
-}
+// function getFormInputValues() {
+//   return {
+//     name: document.getElementById("destination").value,
+//     codeType: document.getElementById("codeType").value,
+//     description: document.getElementById("description").value,
+//   };
+// }
