@@ -32,7 +32,7 @@
           ><span>Monsters</span>
         </li>
 
-        <li class="nav_list_item" onclick='changeURL("friends")'>
+        <li class="nav_list_item">
           <i class="fa-solid fa-user-group"></i
           ><span href="/Monster">Friends</span>
         </li>
@@ -55,21 +55,6 @@
         alt="profile picture"
       />
     </nav>
-    <h2>Add a Monster!</h2>
-    <form
-      action="https://monster-collector.herokuapp.com/monster/"
-      method="POST"
-    >
-      <label>
-        Name:
-        <input type="text" name="name" autocomplete="off" />
-      </label>
-      <label>
-        isScary?
-        <input type="checkbox" name="isScary" />
-      </label>
-      <button type="submit">Add Monster</button>
-    </form>
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="routes.js"></script>
   </body>

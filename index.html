@@ -10,43 +10,18 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="siwg.css" />
     <link rel="stylesheet" href="styles.css" />
     <script
       src="https://kit.fontawesome.com/789fa0b966.js"
       crossorigin="anonymous"
     ></script>
-    <title>JMRmonS</title>
+    <title>CODERMONS</title>
   </head>
   <body>
     <nav>
+      <h1 class="navbar_title fa-solid fa-terminal">CODERMONS</h1>
       <ul class="top_nav">
-        <h1 class="navbar_title">CODEMONS</h1>
-        <li class="nav_list_item">
-          <i class="fa-solid fa-plus"></i
-          ><span href="/Monster">Create New</span>
-        </li>
-        <li class="nav_list_item" onclick="getMonsterData()">
-          <i class="fa-solid fa-spaghetti-monster-flying"></i
-          ><span href="/Monster">Monsters</span>
-        </li>
-
-        <li class="nav_list_item">
-          <i class="fa-solid fa-user-group"></i
-          ><span href="/Monster">Friends</span>
-        </li>
-
-        <li class="nav_list_item">
-          <i class="fa-solid fa-comments"></i><span href="/Monster">Chat</span>
-        </li>
-        <li class="nav_list_item">
-          <i class="fa-solid fa-gamepad icon"></i
-          ><span href="/Monster">Battle</span>
-        </li>
-        <li class="nav_list_item">
-          <i class="fa-solid fa-arrow-right-from-bracket"></i
-          ><span href="/auth/logout">Sign out</span>
-        </li>
-
         <a
           href="https://monster-collector.herokuapp.com/auth/google"
           class="siwg-link"
@@ -56,15 +31,13 @@
           </button>
         </a>
       </ul>
-      <img
+      <!-- <img
         class="profile_pic"
         src="https://yt3.ggpht.com/yti/APfAmoH2cmlGGfouG3eXDsdzWshSSu4tVFDDzWTihA=s88-c-k-c0x00ffffff-no-rj-mo"
         alt="profile picture"
-      />
+      /> -->
     </nav>
-    <section class="card_section top">
-      <div id="cards_container"></div>
-    </section>
+
     <script type="text/javascript" src="script.js"></script>
   </body>
 </html>

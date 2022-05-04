@@ -1,6 +1,15 @@
 let cardCount = 0;
 
 function displayFormData({ _id, name, isScary, owner }) {
+  function capitalizeFirstLetter(name) {
+    return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+  }
+
+  if (name) {
+    name = capitalizeFirstLetter(name);
+    name = name.replace(" ", "");
+  }
+
   const card = document.createElement("div");
 
   card.setAttribute("id", _id);
@@ -12,34 +21,30 @@ function displayFormData({ _id, name, isScary, owner }) {
 
   const photoEle = document.createElement("img");
 
-  let locationPhoto = `https://api.kwelo.com/v1/media/identicon/${cardCount}`;
+  let photoURL = `https://api.kwelo.com/v1/media/identicon/${name}`;
 
-  photoEle.setAttribute("src", locationPhoto);
+  photoEle.setAttribute("src", photoURL);
+  photoEle.setAttribute("loading", "lazy");
 
   photoEle.classList.add("card-img-top");
   card.appendChild(photoEle);
-
-  //   const IdElement = document.createElement("h5");
-  //   IdElement.classList.add("card-title");
-  //   IdElement.innerText = _id;
-  //   cardBody.appendChild(IdElement);
 
   const countIdElement = document.createElement("h4");
   countIdElement.classList.add("card_count_id");
   countIdElement.innerText = `# ${++cardCount}`;
   cardBody.appendChild(countIdElement);
 
-  const nameElement = document.createElement("h2");
+  const nameElement = document.createElement("h3");
   nameElement.classList.add("card-text", "top");
   nameElement.innerText = name;
   cardBody.appendChild(nameElement);
 
   const typeElement = document.createElement("span");
   typeElement.classList.add("status");
-  if (cardCount % 2 === 0) {
+  if (name && name.length % 2 === 0) {
     typeElement.innerHTML = "Javascript";
     typeElement.classList.add("javascript");
-  } else if (cardCount % 3 === 0) {
+  } else if (name && name.length % 3 === 0) {
     typeElement.innerHTML = "C#";
     typeElement.classList.add("CSharp");
   } else {
@@ -48,22 +53,13 @@ function displayFormData({ _id, name, isScary, owner }) {
   }
 
   cardBody.appendChild(typeElement);
-
-  //   const placeholderDesc = "Place holder text.";
-
-  //   const scaryElement = document.createElement("p");
-
-  //   if (isScary) {
-  //     scaryElement.innerText = isScary;
-  //   } else {
-  //     scaryElement.innerText = isScary;
-  //   }
-  //   scaryElement.classList.add("card-text");
-  //   cardBody.appendChild(scaryElement);
-
   card.appendChild(cardBody);
 
-  document.getElementById("cards_container").appendChild(card);
+  const cardDiv = document.createElement("div");
+  cardDiv.appendChild(card);
+  cardDiv.classList.add("card_div");
+
+  document.getElementById("cards_container").appendChild(cardDiv);
 }
 
 async function getMonsterData() {
@@ -83,4 +79,17 @@ async function getMonsterData() {
   });
 
   return data;
+}
+
+function createMonster() {
+  const inputValues = getFormInputValues();
+  createRoute(`https://monster-collector.herokuapp.com/monster/${userId}`);
+}
+
+function getFormInputValues() {
+  return {
+    name: document.getElementById("destination").value,
+    codeType: document.getElementById("codeType").value,
+    description: document.getElementById("description").value,
+  };
 }
