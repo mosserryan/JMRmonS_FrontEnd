@@ -337,7 +337,7 @@ i.fa-solid {
   background-image: cover;
 }
 
-.index-container {
+.container {
   text-align: center;
   padding: 30px;
   background: transparent;
@@ -351,4 +351,14 @@ i.fa-solid {
 
 .logo-image {
   height: 100px;
+}
+
+#createContainer {
+  padding-top: 20px;
+  /* background-color: #e4e4e4b0;
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; */
 }
