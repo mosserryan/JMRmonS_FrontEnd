@@ -15,7 +15,7 @@
       src="https://kit.fontawesome.com/789fa0b966.js"
       crossorigin="anonymous"
     ></script>
-    <title>JaMMeRMonS</title>
+    <title>CODERMONS</title>
   </head>
   <body>
     <nav>
@@ -53,7 +53,6 @@
       />
     </nav>
 
-<<<<<<< HEAD
     <div class="container" id="createContainer">
       <form
         action="https://monster-collector.herokuapp.com/monster/"
@@ -67,24 +66,25 @@
             class="form-control"
             id="monsterName"
             placeholder="Monster Name"
+            name="name"
           />
         </div>
 
         <div class="form-group">
           <label for="monsterCodeType">Code Type:</label>
-          <select id="codeTypeSelect" class="form-control">
+          <select id="codeTypeSelect" class="form-control" name="codeType">
             <option selected>Choose one code type</option>
-            <option value="1">C</option>
-            <option value="2">C++</option>
-            <option value="3">C#</option>
-            <option value="4">GO</option>
-            <option value="5">Java</option>
-            <option value="6">JavaScript</option>
-            <option value="7">PHP</option>
-            <option value="8">Python</option>
-            <option value="9">R</option>
-            <option value="10">Swift</option>
-            <option value="11">Visual Basic</option>
+            <option value="C">C</option>
+            <option value="C++">C++</option>
+            <option value="C#">C#</option>
+            <option value="GO">GO</option>
+            <option value="Java">Java</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="PHP">PHP</option>
+            <option value="Python">Python</option>
+            <option value="R">R</option>
+            <option value="Swift">Swift</option>
+            <option value="Visual_Basic">Visual Basic</option>
           </select>
         </div>
         <div class="form-group">
@@ -94,71 +94,13 @@
             placeholder="Monster Description"
             class="form-control"
             name="description"
+            col="15"
             rows="5"
-          >
-          </textarea>
+          ></textarea>
         </div>
         <input type="submit" class="btn btn-primary btn-lg" value="Create" />
       </form>
     </div>
-=======
-    <h2>Add a Monster!</h2>
-    <form
-      action="https://monster-collector.herokuapp.com/monster/"
-      method="POST"
-    >
-      <label>
-        Name:
-        <input type="text" name="name" autocomplete="off" />
-      </label>
-      <label>
-        isScary?
-        <input type="checkbox" name="isScary" />
-      </label>
-      <button type="submit">Add Monster</button>
-    </form>
-
-    <!-- <form
-      action="https://monster-collector.herokuapp.com/monster/6272f5648a9b404ff4bfce09"
-      method="PUT"
-    >
-      <div id="input_forms" class="form">
-        <div id="name_form" class="form-group col-12">
-          <label for="name"
-            >Name
-            <input
-              class="form-control"
-              type="text"
-              id="name"
-              name="name"
-              required
-            />
-          </label>
-        </div>
-        <div id="code_type_form" class="form-group col-12">
-          <label for="code_type">Code Type</label>
-          <input
-            class="form-control"
-            type="text"
-            id="code_type"
-            name="codeType"
-            required
-          />
-        </div>
-        <div id="description_form" class="form-group col-12">
-          <label for="description">Description</label>
-          <textarea
-            class="form-control"
-            id="description"
-            name="description"
-            cols="15"
-            rows="5"
-          ></textarea>
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit Changes</button>
-    </form> -->
->>>>>>> c058d2d20222a75c2cac9375e0297ca2e78cfbf2
 
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="routes.js"></script>
