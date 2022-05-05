@@ -121,6 +121,9 @@ function displayFormData({ _id, name, codeType, description }) {
   } else if (codeType === "C++" || codeType === "c++") {
     typeElement.classList.add("cPlus");
     typeElement.innerText = "C++";
+  } else if (codeType === "Visual_Basic") {
+    typeElement.classList.add("vBasic");
+    typeElement.innerText = "Visual Basic";
   } else if (codeType) {
     typeElement.innerText = codeType;
     typeElement.classList.add(codeType.toLowerCase());
