@@ -378,6 +378,16 @@ i.fa-solid {
   justify-content: center; */
 }
 
+.registerModal {
+  padding: 1em;
+  max-width: 50ch;
+}
+
+#registerModalContent {
+  width: 250px;
+  background-color: rgb(226, 141, 141);
+}
+
 @media screen and (min-width: 1394px) and (max-width: 1644px) {
   #cards_container {
     width: 80rem;
