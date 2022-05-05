@@ -15,13 +15,28 @@
   transform: translate(-50%, -50%) !important;
 }
 
+.modal-content {
+  border-radius: 10px;
+}
+
+#modal_img {
+  height: 30rem;
+}
+
+#modal_card {
+  border-radius: 0%;
+  border: none;
+}
+
 .status {
   color: rgb(255, 255, 255);
   font-size: 1.3em;
   font-weight: bold;
   padding: 0.125rem 1rem;
   border-radius: 5px;
-  width: 100px !important;
+  display: inline-block;
+  width: 38% !important;
+  text-align: center;
 }
 
 .status.javascript {
@@ -32,14 +47,33 @@
   background: rgb(255, 42, 0);
 }
 
-.status.CSharp {
+.status.cSharp {
   background: rgb(0, 166, 255);
-  padding: 0.125rem 3rem;
+}
+
+.status.cPlus {
+  background: rgb(12, 97, 142);
+}
+.status.c {
+  background: rgb(44, 165, 3);
 }
 
 .status.python {
   background: purple;
-  padding: 0.125rem 2rem;
+}
+
+.status.sql {
+  background: rgb(255, 247, 0);
+
+  color: black;
+}
+
+.status.rust {
+  background: rgb(103, 55, 21);
+}
+
+.status.perl {
+  background: rgb(230, 174, 229);
 }
 
 html {
@@ -79,15 +113,6 @@ body {
 .modal-footer .btn {
   font-size: 1.5rem !important;
 }
-
-/* #info_buttons {
-  display: flex;
-  flex-direction: row;
-  align-content: s;
-}
-
-#input_buttons {
-} */
 
 #input_forms {
   margin-top: 30px;
@@ -219,8 +244,6 @@ nav {
   margin-left: auto;
   margin-right: auto;
   height: 100%;
-
-  /* background: radial-gradient(ellipse at center, #393939 0%, #303030 90%); */
 }
 
 .nav_list_item {
@@ -279,19 +302,13 @@ i.fa-solid {
   margin-right: 2%;
 }
 
-.fa-solid.fa-v {
-}
-
 .navbar_title {
   margin-left: 2%;
   color: rgb(211, 211, 211);
-
-  /* background: radial-gradient(#5c5c5c 0%, #303030 100%); */
 }
 
 .navbar_title:hover {
   color: rgb(255, 255, 255);
-  /* background: radial-gradient(ellipse at center, #5c5c5c 80%, #868585 80%); */
 }
 
 .btn {
