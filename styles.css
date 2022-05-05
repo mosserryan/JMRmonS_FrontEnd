@@ -371,3 +371,13 @@ i.fa-solid {
   flex-wrap: wrap;
   justify-content: center; */
 }
+
+.registerModal {
+  padding: 1em;
+  max-width: 50ch;
+}
+
+#registerModalContent {
+  width: 250px;
+  background-color: rgb(226, 141, 141);
+}
