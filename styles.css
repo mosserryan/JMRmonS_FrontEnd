@@ -8,7 +8,7 @@
 }
 
 .modal-dialog {
-  width: 18%;
+  width: 37rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -37,13 +37,14 @@
   pointer-events: none;
 }
 
-.model-content {
-  border-radius: 15px !important;
+#modal_code_type {
+  margin-bottom: 10px;
 }
 
 #modal_desc {
-  padding-top: 1.5rem;
   padding-bottom: 0;
+  max-height: 10rem;
+  overflow-y: auto;
 }
 
 .status {
