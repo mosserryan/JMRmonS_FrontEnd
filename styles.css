@@ -35,12 +35,17 @@
   padding: 0.125rem 1rem;
   border-radius: 5px;
   display: inline-block;
-  width: 38% !important;
+  width: 40% !important;
   text-align: center;
 }
 
 .status.javascript {
   background: rgb(255, 149, 0);
+}
+
+status.vBasic {
+  background: #00ffb7;
+  color: black;
 }
 
 .status.java {
@@ -64,7 +69,6 @@
 
 .status.sql {
   background: rgb(255, 247, 0);
-
   color: black;
 }
 
