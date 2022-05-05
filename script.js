@@ -166,3 +166,8 @@ async function getMonsterData() {
 
   return data;
 }
+
+function dropDown() {
+  const navMenu = document.querySelector(".top_nav");
+  navMenu.classList.toggle("toggle_menu");
+}

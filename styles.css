@@ -8,7 +8,7 @@
 }
 
 .modal-dialog {
-  width: 18%;
+  width: 37rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -26,6 +26,25 @@
 #modal_card {
   border-radius: 0%;
   border: none;
+}
+
+.modal-footer .btn {
+  font-size: 1.5rem !important;
+}
+
+.modal_card_div {
+  padding: 0 10px 0 10px;
+  pointer-events: none;
+}
+
+#modal_code_type {
+  margin-bottom: 10px;
+}
+
+#modal_desc {
+  padding-bottom: 0;
+  max-height: 10rem;
+  overflow-y: auto;
 }
 
 .status {
@@ -79,24 +98,22 @@
 .status.php {
   background: rgb(230, 174, 229);
 }
+
 .status.swift {
   background: rgb(255, 255, 255);
   border: solid black 0.1px;
   color: black;
 }
+
 .status.go {
   background: rgb(25, 184, 253);
   color: black;
 }
 
-html {
-  box-sizing: border-box;
-}
-
 .card_section.top {
   padding: 0 !important;
   display: flex;
-  width: 70%;
+  width: 120rem;
   margin-left: auto;
   margin-right: auto;
   background: #e9e9e9;
@@ -104,9 +121,12 @@ html {
   background-image: url(https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png);
 }
 
+.hamburger {
+  display: none;
+}
+
 body {
   background-image: url(https://assets.pokemon.com/static2/_ui/img/chrome/body_bg.png);
-
   height: 100%;
 }
 
@@ -116,15 +136,11 @@ body {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .form-control {
   font-size: 1.5rem;
-}
-
-.modal-footer .btn {
-  font-size: 1.5rem !important;
 }
 
 #input_forms {
@@ -134,7 +150,7 @@ body {
 #cards_container {
   padding-top: 20px;
   background-color: #e4e4e4b0;
-  width: 75%;
+  width: 90rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -145,19 +161,6 @@ body {
   width: 28%;
   padding: 10px;
   pointer-events: none;
-}
-.modal_card_div {
-  padding: 0 10px 0 10px;
-  pointer-events: none;
-}
-
-.model-content {
-  border-radius: 15px !important;
-}
-
-#modal_desc {
-  padding-top: 1.5rem;
-  padding-bottom: 0;
 }
 
 .card {
@@ -252,10 +255,11 @@ nav {
   margin: 0;
   align-items: center;
   display: flex;
-  width: 60%;
+  width: 70%;
   padding: 0;
   margin-left: auto;
   margin-right: auto;
+  justify-content: center;
   height: 100%;
 }
 
@@ -265,7 +269,7 @@ nav {
   align-items: center;
   justify-content: center;
   height: 100%;
-  width: 13%;
+  width: 12rem;
   filter: grayscale(100%); /* Force icons to be gray until hovered over */
   transition: 600ms;
 }
@@ -310,13 +314,16 @@ i.fa-solid {
 }
 
 .profile_pic {
+  position: absolute;
+  right: 0;
   border-radius: 50%;
-  height: 50%;
+  height: 5rem;
   margin-right: 2%;
 }
 
 .navbar_title {
-  margin-left: 2%;
+  position: absolute;
+  left: 3%;
   color: rgb(211, 211, 211);
 }
 
@@ -380,4 +387,118 @@ i.fa-solid {
 #registerModalContent {
   width: 250px;
   background-color: rgb(226, 141, 141);
+}
+
+@media screen and (min-width: 1394px) and (max-width: 1644px) {
+  #cards_container {
+    width: 80rem;
+  }
+
+  .card_div {
+    width: 33%;
+  }
+
+  .card_section.top {
+    width: 100rem;
+  }
+}
+
+@media screen and (min-width: 728px) and (max-width: 1488px) {
+  .navbar_title {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 829px) and (max-width: 1488px) {
+  #cards_container {
+    width: 50rem;
+  }
+
+  .card_div {
+    width: 50%;
+  }
+
+  .card_section.top {
+    width: 70rem;
+  }
+}
+@media screen and (max-width: 1183px) {
+  .profile_pic {
+    display: none;
+  }
+
+  .top_nav {
+    width: 100%;
+  }
+  .nav_list_item {
+    width: 14%;
+  }
+}
+@media screen and (max-width: 728px) {
+  .top_nav {
+    flex-direction: column;
+    position: absolute;
+    top: 15%;
+    width: 100%;
+    height: 85%;
+    background-color: rgb(93, 93, 93) !important;
+    z-index: 10;
+  }
+  nav {
+    height: 15%;
+  }
+
+  .toggle_menu {
+    display: none !important;
+  }
+
+  .nav_list_item {
+    width: 100%;
+    border: solid 1px black;
+  }
+
+  li.nav_list_item.active {
+    border-bottom: 1px solid;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 5%;
+    margin-left: 30px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .navbar_title {
+    display: block !important;
+    left: 5%;
+  }
+}
+
+@media screen and (min-width: 618px) and (max-width: 828px) {
+  #cards_container {
+    width: 50rem;
+  }
+
+  .card_div {
+    width: 60%;
+  }
+
+  .card_section.top {
+    width: 50rem;
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 618px) {
+  #cards_container {
+    width: 30rem;
+  }
+
+  .card_div {
+    width: 100%;
+  }
+
+  .card_section.top {
+    width: 30rem;
+  }
 }
