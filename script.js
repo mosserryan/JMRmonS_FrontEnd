@@ -74,9 +74,6 @@ function displayFormData({ _id, name, codeType, description }) {
   } else if (codeType.toLowerCase() === "visual basic") {
     typeElement.classList.add("vBasic");
     typeElement.innerText = "Visual Basic";
-  } else if (codeType.toLowerCase() === "choose one code type") {
-    typeElement.innerHTML = "JavaScript";
-    typeElement.classList.add("javascript");
   } else if (codeType) {
     typeElement.innerText = codeType;
     typeElement.classList.add(codeType.toLowerCase());
