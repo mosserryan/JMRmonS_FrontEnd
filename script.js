@@ -6,76 +6,26 @@ let toggled = false;
 let defaultDesc =
   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut nisi laboriosam voluptatem expedita tempora quidem quisquam quos, nostrum dicta sit obcaecati aspernatur distinctio beatae esse odit eveniet exercitationem! Voluptate, quam.";
 
-function toggleModal(selected) {
-  // Setting the currently selected monster's Id and setting to the
-  // global currentId for later use. (Same with cardBody and cardImg)
-  currentMonsterId = selected.children[0].getAttribute("id");
-  cardBody = selected.children[0].children[1];
-  cardImg = selected.children[0].children[0];
+// Getting list of entire monsters to display.
+async function getMonsterData() {
+  const URL = `https://monster-collector.herokuapp.com/monster`;
 
-  // Rebuilding the card for modal view.
-  const [cardId, name, codeType, description] = cardBody.children;
-  const removedClass = document.getElementById("modal_code_type").classList[1];
-  const addedClass = codeType.classList[1];
+  const response = await fetch(URL);
+  const data = await response.json();
 
-  document.getElementById("modal_card_id").innerText = cardId.innerText;
-  document.getElementById("modal_name").innerText = name.innerText;
-  document.getElementById("modal_code_type").innerText = codeType.innerText;
-  document.getElementById("modal_code_type").classList.remove(removedClass);
-  document.getElementById("modal_code_type").classList.add(addedClass);
-  document.getElementById("modal_desc").innerText = description.innerText;
-  document
-    .getElementById("modal_img")
-    .setAttribute("src", cardImg.getAttribute("src"));
-
-  // Presetting data incase the user want's to edit the monster.
-  document.getElementById("monster_name").value = name.innerText;
-  document.getElementById("code_type").value = codeType.innerText;
-  document.getElementById("monster_description").value = description.innerText;
-
-  // Prepping edit button for modal with the currentId of monster.
-  const putURL = `https://monster-collector.herokuapp.com/monster/${currentMonsterId}`;
-  document.getElementById("modal_edit_form").setAttribute("action", putURL);
-
-  console.log(document.getElementById("modal_delete_form"));
-
-  const deleteURL = `https://monster-collector.herokuapp.com/monster/${currentMonsterId}?_method=DELETE`;
-  document
-    .getElementById("modal_delete_form")
-    .setAttribute("action", deleteURL);
-  toggled = false;
-  toggleHide();
-}
-
-function editMonster() {
-  console.log(currentMonsterId);
-  toggled = true;
-  toggleHide();
-}
-
-function toggleHide() {
-  if (toggled) {
-    document.getElementById("input_forms").classList.remove("hidden");
-    document.getElementById("monster_info").classList.add("hidden");
-    document.getElementById("input_buttons").classList.remove("hidden");
-    document.getElementById("info_buttons").classList.add("hidden");
-  } else {
-    document.getElementById("input_forms").classList.add("hidden");
-    document.getElementById("monster_info").classList.remove("hidden");
-    document.getElementById("input_buttons").classList.add("hidden");
-    document.getElementById("info_buttons").classList.remove("hidden");
+  if (data.errors) {
+    return { error: "Could not get information" };
   }
+
+  data.forEach((monster) => {
+    displayFormData(monster);
+  });
+
+  return data;
 }
 
+// Turns objects into card for displaying
 function displayFormData({ _id, name, codeType, description }) {
-  // function capitalizeFirstLetter(name) {
-  //   return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
-  // }
-  // if (name) {
-  //   name = capitalizeFirstLetter(name);
-  //   name = name.replace(" ", "");
-  // }
-
   // Everything goes into the card-div and add modal capabilties
   const cardDiv = document.createElement("div");
   cardDiv.classList.add("card_div");
@@ -115,13 +65,13 @@ function displayFormData({ _id, name, codeType, description }) {
   // Creating type and place in card body.
   const typeElement = document.createElement("span");
   typeElement.classList.add("status");
-  if (codeType === "C#" || codeType === "c#") {
+  if (codeType.toLowerCase() === "c#") {
     typeElement.classList.add("cSharp");
     typeElement.innerText = "C#";
-  } else if (codeType === "C++" || codeType === "c++") {
+  } else if (codeType.toLowerCase() === "c++") {
     typeElement.classList.add("cPlus");
     typeElement.innerText = "C++";
-  } else if (codeType === "Visual_Basic") {
+  } else if (codeType.toLowerCase() === "visual basic") {
     typeElement.classList.add("vBasic");
     typeElement.innerText = "Visual Basic";
   } else if (codeType) {
@@ -150,23 +100,66 @@ function displayFormData({ _id, name, codeType, description }) {
   document.getElementById("cards_container").appendChild(cardDiv);
 }
 
-async function getMonsterData() {
-  const URL = `https://monster-collector.herokuapp.com/monster`;
+function toggleModal(selected) {
+  // Setting the currently selected monster's Id and setting to the
+  // global currentId for later use. (Same with cardBody and cardImg)
+  currentMonsterId = selected.children[0].getAttribute("id");
+  cardBody = selected.children[0].children[1];
+  cardImg = selected.children[0].children[0];
 
-  const response = await fetch(URL);
-  const data = await response.json();
+  // Rebuilding the card for modal view.
+  const [cardId, name, codeType, description] = cardBody.children;
+  const removedClass = document.getElementById("modal_code_type").classList[1];
+  const addedClass = codeType.classList[1];
+  document.getElementById("modal_card_id").innerText = cardId.innerText;
+  document.getElementById("modal_name").innerText = name.innerText;
+  document.getElementById("modal_code_type").innerText = codeType.innerText;
+  document.getElementById("modal_code_type").classList.remove(removedClass);
+  document.getElementById("modal_code_type").classList.add(addedClass);
+  document.getElementById("modal_desc").innerText = description.innerText;
+  document
+    .getElementById("modal_img")
+    .setAttribute("src", cardImg.getAttribute("src"));
 
-  if (data.errors) {
-    return { error: "Could not get information" };
-  }
+  // Presetting data incase the user want's to edit the monster.
+  document.getElementById("monster_name").value = name.innerText;
+  document.getElementById("code_type").value = codeType.innerText;
+  document.getElementById("monster_description").value = description.innerText;
 
-  data.forEach((monster) => {
-    displayFormData(monster);
-  });
+  // Prepping edit/delete button for modal with the currentId of monster.
+  const putURL = `https://monster-collector.herokuapp.com/monster/${currentMonsterId}`;
+  document.getElementById("modal_edit_form").setAttribute("action", putURL);
+  const deleteURL = `https://monster-collector.herokuapp.com/monster/${currentMonsterId}?_method=DELETE`;
+  document
+    .getElementById("modal_delete_form")
+    .setAttribute("action", deleteURL);
 
-  return data;
+  toggled = false;
+  toggleHide();
 }
 
+// Kicks off the modal into edit mode
+function editMonster() {
+  toggled = true;
+  toggleHide();
+}
+
+// Used to toggle between edit and view mode of the modal
+function toggleHide() {
+  if (toggled) {
+    document.getElementById("input_forms").classList.remove("hidden");
+    document.getElementById("monster_info").classList.add("hidden");
+    document.getElementById("input_buttons").classList.remove("hidden");
+    document.getElementById("info_buttons").classList.add("hidden");
+  } else {
+    document.getElementById("input_forms").classList.add("hidden");
+    document.getElementById("monster_info").classList.remove("hidden");
+    document.getElementById("input_buttons").classList.add("hidden");
+    document.getElementById("info_buttons").classList.remove("hidden");
+  }
+}
+
+// For hamburger menu when screen size is small enough.
 function dropDown() {
   const navMenu = document.querySelector(".top_nav");
   navMenu.classList.toggle("toggle_menu");
