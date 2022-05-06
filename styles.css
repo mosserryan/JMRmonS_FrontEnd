@@ -7,6 +7,76 @@
   color: black;
 }
 
+body {
+  background-image: url(https://assets.pokemon.com/static2/_ui/img/chrome/body_bg.png);
+  height: 100%;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: aqua;
+  width: 80%;
+}
+
+h1 {
+  font-size: 3.6rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+}
+
+.hamburger {
+  display: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.form-control {
+  font-size: 1.5rem;
+}
+
+p,
+label,
+li,
+button,
+input {
+  font-size: 1.8rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+.profile_pic {
+  position: absolute;
+  right: 0;
+  border-radius: 50%;
+  height: 5rem;
+  margin-right: 2%;
+}
+
+.btn {
+  margin: 1.6rem 0;
+}
+
+.link {
+  padding: 1rem 0;
+  font-size: 1.8rem;
+  display: inline-block;
+}
+
+/* MODAL CSS */
 .modal-dialog {
   width: 37rem;
   position: absolute;
@@ -45,6 +115,77 @@
   padding-bottom: 0;
   max-height: 10rem;
   overflow-y: auto;
+}
+
+#input_forms {
+  margin-top: 30px;
+}
+
+/* CARD content */
+.card_section.top {
+  padding: 0 !important;
+  display: flex;
+  width: 120rem;
+  margin-left: auto;
+  margin-right: auto;
+  background: #e9e9e9;
+  justify-content: center;
+  background-image: url(https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png);
+}
+
+.card_count_id {
+  color: #a2a2a2;
+  position: absolute;
+}
+
+#cards_container {
+  padding-top: 20px;
+  background-color: #e4e4e4b0;
+  width: 90rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card_div {
+  width: 28%;
+  padding: 10px;
+  pointer-events: none;
+}
+
+.card {
+  margin: 1rem;
+  background-color: #ffffff;
+  border-color: #c0c0c03f;
+  transition-duration: 0.3s;
+  pointer-events: auto;
+  border-radius: 10px;
+}
+
+.card-body {
+  padding-top: 5px;
+}
+
+.card-text.top {
+  padding-top: 30px;
+  padding-bottom: 2px;
+}
+
+.card:hover .card-img-top {
+  filter: grayscale(0%) brightness(150%);
+}
+
+.card-img-top {
+  border-radius: 10px 10px 0 0;
+  height: 22rem;
+  padding: 25px;
+  background-color: #ffffff;
+}
+
+.card_div:hover {
+  padding: 0 10px 0 10px;
+  transition-duration: 0.3s;
 }
 
 .status {
@@ -100,7 +241,7 @@
 }
 
 .status.swift {
-  background: rgb(255, 255, 255);
+  background: rgba(227, 227, 227, 0.891);
   border: solid black 0.1px;
   color: black;
 }
@@ -110,135 +251,7 @@
   color: black;
 }
 
-.card_section.top {
-  padding: 0 !important;
-  display: flex;
-  width: 120rem;
-  margin-left: auto;
-  margin-right: auto;
-  background: #e9e9e9;
-  justify-content: center;
-  background-image: url(https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png);
-}
-
-.hamburger {
-  display: none;
-}
-
-body {
-  background-image: url(https://assets.pokemon.com/static2/_ui/img/chrome/body_bg.png);
-  height: 100%;
-}
-
-.card_count_id {
-  color: #a2a2a2;
-  position: absolute;
-}
-
-.hidden {
-  display: none !important;
-}
-
-.form-control {
-  font-size: 1.5rem;
-}
-
-#input_forms {
-  margin-top: 30px;
-}
-
-#cards_container {
-  padding-top: 20px;
-  background-color: #e4e4e4b0;
-  width: 90rem;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.card_div {
-  width: 28%;
-  padding: 10px;
-  pointer-events: none;
-}
-
-.card {
-  margin: 1rem;
-  background-color: #ffffff;
-  border-color: #c0c0c03f;
-  transition-duration: 0.3s;
-  pointer-events: auto;
-  border-radius: 10px;
-}
-
-.card-body {
-  padding-top: 5px;
-}
-
-.card-text.top {
-  padding-top: 30px;
-  padding-bottom: 2px;
-}
-
-.card:hover .card-img-top {
-  filter: grayscale(0%) brightness(150%);
-}
-
-.card-img-top {
-  border-radius: 10px 10px 0 0;
-  height: 22rem;
-  padding: 25px;
-  background-color: #ffffff;
-}
-
-.card_div:hover {
-  padding: 0 10px 0 10px;
-  transition-duration: 0.3s;
-}
-
-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-color: aqua;
-  width: 80%;
-}
-
-h1 {
-  font-size: 3.6rem;
-  margin: 0;
-}
-
-h2 {
-  font-size: 3rem;
-}
-
-h3 {
-  font-size: 2.4rem;
-}
-
-ul {
-  list-style-type: none;
-}
-
-p,
-label,
-li,
-button,
-input {
-  font-size: 1.8rem;
-}
-
-label {
-  font-weight: bold;
-}
-
-li.nav_list_item span {
-  color: #cccccc;
-}
-
+/* NAVIGATION CSS */
 nav {
   display: flex;
   height: 10rem;
@@ -281,6 +294,7 @@ nav {
 .nav_list_item:hover i.fa-solid {
   color: #d900ff;
 }
+
 .nav_list_item:hover span {
   color: #ffffff;
 }
@@ -288,6 +302,7 @@ nav {
 li.nav_list_item:hover {
   background-color: rgb(93, 93, 93) !important;
 }
+
 .nav_list_item.active {
   filter: grayscale(0%) opacity(1);
 }
@@ -297,28 +312,6 @@ li.nav_list_item:hover {
 }
 .nav_list_item.active span {
   color: #ffffff;
-}
-
-li.nav_list_item.active {
-  background-color: rgb(93, 93, 93) !important;
-  border-bottom: 5px solid #d900ff;
-}
-
-.nav_list_item span {
-  text-decoration: none !important;
-}
-
-i.fa-solid {
-  color: #a2a2a2;
-  font-size: x-large;
-}
-
-.profile_pic {
-  position: absolute;
-  right: 0;
-  border-radius: 50%;
-  height: 5rem;
-  margin-right: 2%;
 }
 
 .navbar_title {
@@ -331,64 +324,29 @@ i.fa-solid {
   color: rgb(255, 255, 255);
 }
 
-.btn {
-  margin: 1.6rem 0;
+li.nav_list_item.active {
+  background-color: rgb(93, 93, 93) !important;
+  border-bottom: 5px solid #d900ff;
 }
 
-.link {
-  padding: 1rem 0;
-  font-size: 1.8rem;
-  display: inline-block;
+.nav_list_item span {
+  text-decoration: none !important;
 }
 
-.profile-avatar {
-  margin-top: 50px;
+li.nav_list_item span {
+  color: #cccccc;
 }
 
-/* Sachin Start Here */
-.index-background-image {
-  background-image: url("https://images.unsplash.com/photo-1574619151033-a9e1f81cae52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80");
-  height: 100vh;
-  background-position: center;
-  background-image: cover;
+ul {
+  list-style-type: none;
 }
 
-.container {
-  text-align: center;
-  padding: 30px;
-  background: transparent;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-  color: white;
+i.fa-solid {
+  color: #a2a2a2;
+  font-size: x-large;
 }
 
-.logo-image {
-  height: 100px;
-}
-
-#createContainer {
-  padding-top: 20px;
-  /* background-color: #e4e4e4b0;
-  width: 75%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center; */
-}
-
-.registerModal {
-  padding: 1em;
-  max-width: 50ch;
-}
-
-#registerModalContent {
-  width: 250px;
-  background-color: rgb(226, 141, 141);
-}
-
+/* MEDIA QUERIES [Biggest to Smallest]*/
 @media screen and (min-width: 1394px) and (max-width: 1644px) {
   #cards_container {
     width: 80rem;
@@ -402,13 +360,11 @@ i.fa-solid {
     width: 100rem;
   }
 }
-
 @media screen and (min-width: 728px) and (max-width: 1488px) {
   .navbar_title {
     display: none !important;
   }
 }
-
 @media screen and (min-width: 829px) and (max-width: 1488px) {
   #cards_container {
     width: 50rem;
@@ -474,7 +430,6 @@ i.fa-solid {
     left: 5%;
   }
 }
-
 @media screen and (min-width: 618px) and (max-width: 828px) {
   #cards_container {
     width: 50rem;
@@ -488,8 +443,7 @@ i.fa-solid {
     width: 50rem;
   }
 }
-
-@media screen and (min-width: 200px) and (max-width: 618px) {
+@media screen and (max-width: 618px) {
   #cards_container {
     width: 30rem;
   }
@@ -501,4 +455,51 @@ i.fa-solid {
   .card_section.top {
     width: 30rem;
   }
+
+  #modal_img {
+    height: 26rem;
+  }
+}
+
+.index-background-image {
+  background-image: url("https://images.unsplash.com/photo-1574619151033-a9e1f81cae52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80");
+  height: 100vh;
+  background-position: center;
+  background-image: cover;
+}
+
+.container {
+  text-align: center;
+  padding: 30px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.logo-image {
+  height: 100px;
+}
+
+#createContainer {
+  padding-top: 20px;
+  /* background-color: #e4e4e4b0;
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; */
+}
+
+.registerModal {
+  padding: 1em;
+  max-width: 50ch;
+}
+
+#registerModalContent {
+  width: 250px;
+  background-color: rgb(226, 141, 141);
 }

@@ -17,7 +17,6 @@ function toggleModal(selected) {
   const [cardId, name, codeType, description] = cardBody.children;
   const removedClass = document.getElementById("modal_code_type").classList[1];
   const addedClass = codeType.classList[1];
-
   document.getElementById("modal_card_id").innerText = cardId.innerText;
   document.getElementById("modal_name").innerText = name.innerText;
   document.getElementById("modal_code_type").innerText = codeType.innerText;
@@ -33,22 +32,19 @@ function toggleModal(selected) {
   document.getElementById("code_type").value = codeType.innerText;
   document.getElementById("monster_description").value = description.innerText;
 
-  // Prepping edit button for modal with the currentId of monster.
+  // Prepping edit/delete button for modal with the currentId of monster.
   const putURL = `https://monster-collector.herokuapp.com/monster/${currentMonsterId}`;
   document.getElementById("modal_edit_form").setAttribute("action", putURL);
-
-  console.log(document.getElementById("modal_delete_form"));
-
   const deleteURL = `https://monster-collector.herokuapp.com/monster/${currentMonsterId}?_method=DELETE`;
   document
     .getElementById("modal_delete_form")
     .setAttribute("action", deleteURL);
+
   toggled = false;
   toggleHide();
 }
 
 function editMonster() {
-  console.log(currentMonsterId);
   toggled = true;
   toggleHide();
 }
@@ -68,14 +64,6 @@ function toggleHide() {
 }
 
 function displayFormData({ _id, name, codeType, description }) {
-  // function capitalizeFirstLetter(name) {
-  //   return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
-  // }
-  // if (name) {
-  //   name = capitalizeFirstLetter(name);
-  //   name = name.replace(" ", "");
-  // }
-
   // Everything goes into the card-div and add modal capabilties
   const cardDiv = document.createElement("div");
   cardDiv.classList.add("card_div");
@@ -115,13 +103,13 @@ function displayFormData({ _id, name, codeType, description }) {
   // Creating type and place in card body.
   const typeElement = document.createElement("span");
   typeElement.classList.add("status");
-  if (codeType === "C#" || codeType === "c#") {
+  if (codeType.toLowerCase() === "c#") {
     typeElement.classList.add("cSharp");
     typeElement.innerText = "C#";
-  } else if (codeType === "C++" || codeType === "c++") {
+  } else if (codeType.toLowerCase() === "c++") {
     typeElement.classList.add("cPlus");
     typeElement.innerText = "C++";
-  } else if (codeType === "Visual_Basic") {
+  } else if (codeType.toLowerCase() === "visual basic") {
     typeElement.classList.add("vBasic");
     typeElement.innerText = "Visual Basic";
   } else if (codeType) {
@@ -150,6 +138,7 @@ function displayFormData({ _id, name, codeType, description }) {
   document.getElementById("cards_container").appendChild(cardDiv);
 }
 
+// Getting list of entire monsters to display.
 async function getMonsterData() {
   const URL = `https://monster-collector.herokuapp.com/monster`;
 
@@ -167,6 +156,7 @@ async function getMonsterData() {
   return data;
 }
 
+// For hamburger menu when screen size is small enough.
 function dropDown() {
   const navMenu = document.querySelector(".top_nav");
   navMenu.classList.toggle("toggle_menu");

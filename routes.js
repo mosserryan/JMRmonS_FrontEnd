@@ -21,6 +21,4 @@ function changeURL(destination) {
     // location.assign("http://127.0.0.1:5502/index.html");
     location.assign("https://monster-collector.herokuapp.com/auth/logout");
   }
-
-  // href="https://monster-collector.herokuapp.com/auth/logout"
 }
